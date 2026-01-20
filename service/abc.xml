@@ -1,0 +1,20 @@
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service verb="create" noun="Party" type="entity-auto">
+        <in-parameters>
+            <auto-parameters entity-name="tutorial.party.Party" include="nonpk"/>
+
+
+
+            <parameter name="partyTypeEnumId" required="true" >
+                <matches regexp="^(PERSON|PARTY_GROUP)$" message="partyTypeEnumId must be PERSON or PARTY_GROUP"/>
+            </parameter>
+            <parameter name="createdDate" type="date-time">
+                <time-range
+                        after="2024-01-01T00:00"
+                        before="2026-12-31T23:59"/>
+            </parameter>
+            
+        </in-parameters>
+
+    </service>
+</services>

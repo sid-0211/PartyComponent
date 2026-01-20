@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="demo" >
+
+    <tutorial.party.Party partyId="1002" partyTypeEnumId="PARTY_GROUP" createdDate="2025-12-18T18:00:00">
+       <tutorial.party.Person partyId="1002" firstName="Siddharth" lastName="Rawal" dateOfBirth="2003-11-02"/>
+    </tutorial.party.Party>
+
+    <tutorial.party.Party partyId="1003" partyTypeEnumId="PARTY_GROUP" createdDate="2025-12-18T18:00:00">
+            <tutorial.party.Person partyId="1003" firstName="Gourav" lastName="Mehto" dateOfBirth="2003-03-12"/>
+    </tutorial.party.Party>
+
+</entity-facade-xml>

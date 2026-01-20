@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<screen require-authentication="anonymous-all"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://moqui.org/xsd/xml-screen-2.1.xsd">
+
+    <transition name="createParty">
+        <service-call name="create#tutorial.party.Party" />
+        <default-response type="screen-last">
+        </default-response>
+    </transition>
+
+    <widgets>
+        <container-dialog id="createPartyDialoge" button-text="Create Party">
+            <form-single name="CreateParty" transition="createParty">
+
+                <field name="submitButtom" >
+                    <default-field title="Create">
+                        <submit/>
+                    </default-field>
+                </field>
+
+            </form-single>
+        </container-dialog>
+        <label text="Hello World" type="h1"/>
+        <container>
+            <form-list name="PartyList" list="partyList">
+                <field name="partyId">
+                   <default-field>
+                        <display text="${partyId}" also-hidden="false"/>
+                    </default-field>
+                </field>
+                <field name="enumId">
+                    <default-field>
+                        <display text="${partyTypeEnumId}" also-hidden="false"/>
+                    </default-field>
+                </field>
+            </form-list>
+        </container>
+    </widgets>
+</screen>

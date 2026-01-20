@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<moqui-conf>
+    <screen-facade>
+        <screen location="component://webroot/screen/webroot/apps.xml">
+            <subscreens-item name="kuchb" menu-title="RegisterParty" location="component://party/screen/PartyRegisterScreen.xml" />
+            <subscreens-item name="partyScreen" menu-title="ReParty" location="component://party/screen/PartyScreen.xml" />
+            <subscreens-item name="personForm" menu-title="PersonForm" location="component://party/screen/PersonForm.xml" />
+            <subscreens-item name="groupForm" location="component://party/screen/GroupForm.xml" />
+
+        </screen>
+    </screen-facade>
+</moqui-conf>

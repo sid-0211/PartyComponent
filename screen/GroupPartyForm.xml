@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<screen  require-authentication="anonymous-all"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://moqui.org/xsd/xml-screen-2.1.xsd" >
+
+<!--    <transition name="createPartyGroup">-->
+<!--        <actions>-->
+<!--            <service-call name="create#tutorial.party.Party" out-map="party"/>-->
+<!--            <set field="partyId" from="party.partyId"/>-->
+<!--            <service-call name="create#tutorial.party.PartyGroup" in-map="context"/>-->
+<!--        </actions>-->
+
+<!--        <default-response url="/qapps/kuchb">-->
+<!--        </default-response>-->
+<!--    </transition>-->
+
+    <widgets>
+        <label text="Create Party Group" type="h1"/>
+<!--        <form-single name="PartyGroup" transition="createPartyGroup" >-->
+
+<!--            <field name="partyTypeEnumId" >-->
+<!--                <default-field>-->
+<!--                    <hidden default-value="${partyTypeEnumId}"/>-->
+<!--                </default-field>-->
+<!--            </field>-->
+<!--            <field name="partyTypeEnumId" >-->
+<!--                <default-field title="Party Type">-->
+<!--                    <display text="${partyTypeEnumId}" />-->
+<!--                </default-field>-->
+<!--            </field>-->
+
+<!--            <field name="groupName" >-->
+<!--                <default-field title="Group Name" >-->
+<!--                    <text-line/>-->
+<!--                </default-field>-->
+<!--            </field>-->
+
+<!--            <field name="description" >-->
+<!--                <default-field title="Description">-->
+<!--                    <text-area />-->
+<!--                </default-field>-->
+
+<!--            </field>-->
+
+<!--            <field name="submitButtom" >-->
+<!--                <default-field>-->
+<!--                    <submit/>-->
+<!--                </default-field>-->
+<!--            </field>-->
+<!--        </form-single>-->
+
+    </widgets>
+</screen>
