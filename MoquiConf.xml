@@ -2,11 +2,14 @@
 <moqui-conf>
     <screen-facade>
         <screen location="component://webroot/screen/webroot/apps.xml">
-            <subscreens-item name="kuchb" menu-title="RegisterParty" location="component://party/screen/PartyRegisterScreen.xml" />
+            <subscreens-item name="RegisterPartyScreen" menu-title="RegisterParty" location="component://party/screen/PartyRegisterScreen.xml" />
             <subscreens-item name="partyScreen" menu-title="ReParty" location="component://party/screen/PartyScreen.xml" />
             <subscreens-item name="personForm" menu-title="PersonForm" location="component://party/screen/PersonForm.xml" />
             <subscreens-item name="groupForm" location="component://party/screen/GroupForm.xml" />
-
+            <subscreens-item name="confirmDeletePerson" menu-title="ConfirmDeletePerson" location="component://party/screen/ConfirmDeletePerson.xml" />
+            <subscreens-item name="confirmEditPerson" menu-title="ConfirmEditPerson" location="component://party/screen/ConfirmEditPerson.xml" />
+            <subscreens-item name="confirmEditGroup" menu-title="ConfirmEditGroup" location="component://party/screen/ConfirmEditGroup.xml" />
+            <subscreens-item name="confirmDeleteGroup" menu-title="ConfirmDeleteGroup" location="component://party/screen/ConfirmDeleteGroup.xml"/>
         </screen>
     </screen-facade>
 </moqui-conf>

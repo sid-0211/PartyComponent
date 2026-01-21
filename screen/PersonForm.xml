@@ -2,13 +2,18 @@
 <screen  require-authentication="anonymous-all" include-child-content="true"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://moqui.org/xsd/xml-screen-2.1.xsd" >
-    <parameter name="abc"  />
-    <parameter name="pqr"/>
+    <!--    <parameter name="abc"  />-->
+    <!--    <parameter name="pqr"/>-->
     <transition name="createPerson">
         <actions>
             <set field="partyTypeEnumId" default-value="PERSON"/>
-            <service-call name="create#tutorial.party.Party" in-map="context " out-map="party"/>
-            <set field="partyId" from="party.partyId"/>
+
+            <service-call name="create#tutorial.party.Party" in-map="context" out-map="abc"/>
+
+
+            <set field="partyId" from="abc.partyId"/>
+
+
             <service-call name="create#tutorial.party.Person" in-map="context"/>
         </actions>
 
@@ -16,15 +21,14 @@
         </default-response>
     </transition>
 
-    <actions>
-
-        <set field="partyTypeEnumId" default-value="PERSON"/>
-    </actions>
+<!--    <actions>-->
+<!--        <set field="partyTypeEnumId" default-value="PERSON"/>-->
+<!--    </actions>-->
 
     <widgets>
-        <label text="${abc}"/>
-        <label text="${pqr}"/>
-        <label text="Create Person" type="h1"/>
+<!--        <label text="${abc}"/>-->
+<!--        <label text="${pqr}"/>-->
+        <label text="Create Person" type="h1" />
         <form-single name="Person" transition="createPerson">
             <field name="firstName" >
                 <default-field title="First Name" >
@@ -43,6 +47,7 @@
                     <date-time type="date"/>
                 </default-field>
             </field>
+
             <field name="createdDate">
                 <default-field>
                     <hidden default-value="${ec.user.nowTimestamp}"/>

@@ -68,7 +68,5 @@
         <relationship type="one" related="tutorial.party.ContactMech">
             <key-map field-name="contactMechId"/>
         </relationship>
-
     </entity>
-    
 </entities>

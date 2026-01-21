@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <screen require-authentication="anonymous-all" include-child-content="true"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://moqui.org/xsd/xml-screen-2.1.xsd" >
+        xsi:noNamespaceSchemaLocation="https://moqui.org/xsd/xml-screen-2.1.xsd" xmlns="">
 
     <transition name="abc">
 <!--        <service-call name="create#Party" out-map="party"/>-->
@@ -20,7 +20,7 @@
 <!--            <parameter name="partyTypeEnumId" from="partyTypeEnumId"/>-->
 <!--            <parameter name="partyId" from="party.partyId"/>-->
         </conditional-response>
-        <default-response url="/qapps/partyScreen"/>
+        <default-response url="/qapps/RegisterPartyScreen"/>
     </transition>
 
     
@@ -32,6 +32,7 @@
 
         <entity-find entity-name="tutorial.party.Person" list="personList">
         </entity-find>
+
         <entity-find entity-name="tutorial.party.PartyGroup" list="partyGroupList">
         </entity-find>
     </actions>
@@ -39,15 +40,20 @@
     <widgets>
 
         <container-dialog id="asdf" button-text="Create Party">
+
         <form-single name="PartyForm" transition="abc" >
 
             <field name="partyTypeEnumId">
+
                 <default-field title="Select Party Type">
                     <drop-down>
                         <list-options list="partyList" key="${enumId}"/>
                     </drop-down>
                 </default-field>
+
             </field>
+
+
 
             <field name="createdDate">
                 <default-field>
@@ -64,44 +70,81 @@
         </container-dialog>
 
 
+        <container-box>
+            <box-header>
+                <label text="Person List" type="h1"/>
+            </box-header>
+            <box-body>
+                <form-list name="Person" list="personList">
+                    <field name="partyId">
+                        <default-field>
+                            <display text="${partyId}" also-hidden="false"/>
+                        </default-field>
+                    </field>
+                    <field name="firstName">
+                        <default-field title="First Name">
+                            <display text="${firstName}" also-hidden="false"/>
+                        </default-field>
+                    </field>
+                    <field name="lastName">
+                        <default-field title="Last Name">
+                            <display text="${lastName}" also-hidden="false"/>
+                        </default-field>
+                    </field>
 
-        <label text="Person List" type="h4" />
-        <form-list name="Person" list="personList">
-            <field name="partyId">
-                <default-field>
-                    <display text="${partyId}" also-hidden="false"/>
-                </default-field>
-            </field>
-            <field name="firstName">
-                <default-field title="First Name">
-                    <display text="${firstName}" also-hidden="false"/>
-                </default-field>
-            </field>
-            <field name="lastName">
-                <default-field title="Last Name">
-                    <display text="${lastName}" also-hidden="false"/>
-                </default-field>
-            </field>
-        </form-list>
+                    <field name="edit" >
+                        <default-field title="Edit">
+                            <link url="/qapps/confirmEditPerson" text="Edit" parameter-map="[partyId:partyId]"/>
+                        </default-field>
+                    </field>
+                    <field name="delete" >
+                        <default-field title="Delete">
+                            <link url="/qapps/confirmDeletePerson" text="Delete" parameter-map="[partyId:partyId]"/>
+                        </default-field>
+                    </field>
+                </form-list>
+            </box-body>
+        </container-box>
 
-        <label text="Party Group List" type="h4" />
+
+<container-box>
+    <box-header>
+        <label text="Group List" type="h1"/>
+    </box-header>
+    <box-body>
         <form-list name="PartyGroup" list="partyGroupList">
             <field name="partyId">
                 <default-field>
-                    <display text="${partyId}" also-hidden="false"/>
+                    <display text="${partyId}"  />
                 </default-field>
             </field>
             <field name="groupName">
                 <default-field title="Group Name">
-                    <display text="${groupName}" also-hidden="false"/>
+                    <display text="${groupName}" />
                 </default-field>
             </field>
             <field name="description">
                 <default-field title="Description">
-                    <display text="${description}" also-hidden="false"/>
+                    <display text="${description}" />
                 </default-field>
             </field>
+            <field name="edit" >
+                <default-field title="Edit">
+                    <link url="/qapps/confirmEditGroup" text="Edit" parameter-map="[partyId:partyId]"/>
+                </default-field>
+            </field>
+            <field name="delete" >
+                <default-field title="Delete">
+                    <link url="/qapps/confirmDeleteGroup" text="Delete" parameter-map="[partyId:partyId]"/>
+                </default-field>
+            </field>
+
         </form-list>
+    </box-body>
+</container-box>
+
+
+
 
     </widgets>
 </screen>

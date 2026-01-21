@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+    <service verb="create" type="entity-auto" noun="Party">
+        <in-parameters>
+            <auto-parameters entity-name="tutorial.party.Party" include="nonpk"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+    </service>
+
+    <service verb="create" noun="Partyy">
+        <in-parameters>
+            <parameter name="partyId" required="true" type="String" entity-name="tutorial.party.Party" />
+            <parameter name="partyTypeEnumId" type="String" entity-name="tutorial.party.Party" />
+
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+        <actions>
+            <entity-make-value entity-name="tutorial.party.Party" value-field="abc"/>
+            <set field="abc.partyId" from="partyId"/>
+            <set field="abc.partyTypeEnumId" from="partyTypeEnumId"/>
+
+            <entity-create value-field="abc" />
+        </actions>
+    </service>
+
+    <service verb="create" noun="Partyy">
+        <in-parameters>
+            <parameter name="partyId" type="String" entity-name="tutorial.party.Party" />
+            <parameter name="partyTypeEnumId" type="String" entity-name="tutorial.party.Party" />
+
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+        <actions>
+            <entity-make-value entity-name="tutorial.party.Party" value-field="abc"/>
+            <set field="abc.partyId" from="partyId"/>
+            <set field="abc.partyTypeEnumId" from="partyTypeEnumId"/>
+
+            <entity-create value-field="abc" />
+        </actions>
+    </service>
+
+    <service verb="create" noun="PartyByGroovy" type="script" location="component://party/service/groovy/CreatePartyGroovy.groovy">
+        <in-parameters>
+            <auto-parameters include="nonpk" entity-name="tutorial.party.Party"/>
+        </in-parameters>
+
+    </service>
+
+
+
+</services>

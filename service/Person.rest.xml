@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resource name="party">
+    <resource name="party" require-authentication="anonymous-all">
+        <method type="post">
+            <service name="PartyServices.createPartyy" />
+        </method>
+    </resource>
+    <resource name="person" require-authentication="anonymous-all">
+        <method type="post">
+            <service name="create#Person" />
+        </method>
+    </resource>
+    <resource name="group" require-authentication="anonymous-all">
+        <method type="post">
+            <service name="create#PartyGroup" />
+        </method>
+    </resource>
+</resource>
+
