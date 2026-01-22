@@ -23,7 +23,7 @@
         <field name="lastName" type="text-medium"/>
         <field name="dateOfBirth" type="date"/>
 
-        <relationship type="one" related="tutorial.party.Party" no-fk="true">
+        <relationship type="one" related="tutorial.party.Party" >
             <key-map field-name="partyId"/>
         </relationship>
 
@@ -32,7 +32,7 @@
     <entity entity-name="PartyGroup" package="tutorial.party">
         <field name="partyId" type="id" is-pk="true"/>
         <field name="groupName" type="text-medium"/>
-        <field name="description" type="text-long" not-null="true"/>
+        <field name="description" type="text-long"/>
         
         <relationship type="one" related="tutorial.party.Party">
             <key-map field-name="partyId"/>
@@ -46,17 +46,20 @@
         <field name="infoString" type="text-medium"/>
         <field name="createdDate" type="date-time"/>
         
-       <relationship type="one" related="moqui.basic.EnumerationType">
+       <relationship type="one" related="moqui.basic.Enumeration">
            <key-map field-name="contactMechTypeId" related="enumId"/>
        </relationship>
 
         <seed-data>
-            <moqui.basic.EnumerationType description="Party type" enumTypeId="PartyType"/>
-            <moqui.basic.Enumeration description="PERSON" enumId="PERSON" enumTypeId="PartyType"/>
+            <moqui.basic.EnumerationType enumTypeId="ContactMechType" description="Contact Mech Type"/>
+            <moqui.basic.Enumeration enumId="EMAIL" enumTypeId="ContactMechType" description="Email"/>
+            <moqui.basic.Enumeration enumId="TELECOM_NUMBER" enumTypeId="ContactMechType" description="Telecom Number"/>
+            <moqui.basic.Enumeration enumId="POSTAL_ADDRESS" enumTypeId="ContactMechType" description="Postal Address"/>
         </seed-data>
+
     </entity>
     
-    <entity entity-name="PartyContactMech" package="tutorial.Party">
+    <entity entity-name="PartyContactMech" package="tutorial.party">
         <field name="partyId" type="id" is-pk="true"/>
         <field name="contactMechId" type="id" is-pk="true"/>
         <field name="fromDate" type="date-time" is-pk="true"/>

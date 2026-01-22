@@ -10,6 +10,7 @@
             <subscreens-item name="confirmEditPerson" menu-title="ConfirmEditPerson" location="component://party/screen/ConfirmEditPerson.xml" />
             <subscreens-item name="confirmEditGroup" menu-title="ConfirmEditGroup" location="component://party/screen/ConfirmEditGroup.xml" />
             <subscreens-item name="confirmDeleteGroup" menu-title="ConfirmDeleteGroup" location="component://party/screen/ConfirmDeleteGroup.xml"/>
+            <subscreens-item name="createContactMech" menu-title="CreateContactMech" location="component://party/screen/CreatePartyContactMech.xml"/>
         </screen>
     </screen-facade>
 </moqui-conf>

@@ -74,7 +74,14 @@
             <box-header>
                 <label text="Person List" type="h1"/>
             </box-header>
+            
             <box-body>
+                <row-actions>
+                    <entity-find-one entity-name="totorial.party.Person" value-field="partyId" >
+                    </entity-find-one>
+                    <
+
+                </row-actions>
                 <form-list name="Person" list="personList">
                     <field name="partyId">
                         <default-field>

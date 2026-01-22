@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<screen require-authentication="anonymous-all"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://moqui.org/xsd/xml-screen-2.1.xsd">
+
+    <actions>
+        <entity-find entity-name="moqui.basic.Enumeration" list="contactMechList">
+            <econdition field-name="enumTypeId" value="ContactMechType"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <!-- Form (THIS WAS MISSING) -->
+        <form-single name="SeltContactType">
+
+            <field name="contactMechTypeId">
+                <default-field>
+                    <drop-down>
+                        <list-options list="contactMechList"
+                                      key="${enumId}"
+                                      text="${description}"/>
+                    </drop-down>
+                </default-field>
+            </field>
+
+        </form-single>
+
+        <!-- Hidden sections -->
+        <container id="emailSection" style="display:none">
+            <label text="Inside Email"/>
+        </container>
+
+        <container id="postalSection" style="display:none">
+            <label text="Inside Postal"/>
+        </container>
+
+        <container id="telecomSection" style="display:none">
+            <label text="Inside Telecom"/>
+        </container>
+
+    </widgets>
+</screen>

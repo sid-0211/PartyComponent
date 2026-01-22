@@ -33,12 +33,12 @@
                 <form-single name="EditPerson" transition="editPerson" >
                     <field name="partyId">
                         <default-field>
-                            <hidden default-value="partyId"/>
+                            <hidden default-value="${partyId}"/>
                         </default-field>
                     </field>
                     <field name="partyId">
                         <default-field title="PartyId">
-                            <display text="partyId"/>
+                            <display text="${partyId}"/>
                         </default-field>
                     </field>
                     <field name="firstName">
